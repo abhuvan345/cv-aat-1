@@ -24,7 +24,7 @@ for car_id in np.unique(res['car_id']):
     frame_number = res.loc[idx, 'frame_nmb']
     plate_bbox = res.loc[idx, 'plate_bbox']
 
-    license_number.replace(' ','')
+    license_number = license_number.replace(' ','')
 
     cap.set(cv.CAP_PROP_POS_FRAMES, frame_number)
     ret, frame = cap.read()

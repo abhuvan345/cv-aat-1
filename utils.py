@@ -24,9 +24,9 @@ dict_int_to_char = {'0': 'O',
 
 def write_csv(results, output_path):
     with open(output_path, 'w') as f:
-        f.write('{}, {}, {}, {}, {}, {}, {}\n'.format('frame_nmb', 'car_id', 'car_bbox',
-                                                      'plate_bbox', 'plate_bbox_score', 'license_nmb',
-                                                      'license_nmb_score'))
+        f.write('{},{},{},{},{},{},{}\n'.format('frame_nmb', 'car_id', 'car_bbox',
+                                                     'plate_bbox', 'plate_bbox_score', 'license_nmb',
+                                                     'license_nmb_score'))
 
         for frame_nmb in results.keys():
             for car_id in results[frame_nmb].keys():
@@ -98,7 +98,7 @@ def read_license_plate(img):
         if check_license_plate_format(text):
             return format_license_number(text), score
 
-        return -1, -1
+    return -1, -1
 
 
 def map_car(plate, tracking_ids):
