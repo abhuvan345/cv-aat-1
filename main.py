@@ -59,7 +59,7 @@ while ret:
                 else:
                     license_number, license_number_score = "-1", "-1"
 
-                if license_number != -1 and not None:
+                if license_number != -1 and license_number is not None:
                     results[frame_nmb][car_id] = {'car': {'bbox': [x1car, y1car, x2car, y2car]},
                                                   'plate': {'bbox': [x1, y1, x2, y2],
                                                             'text': license_number,
